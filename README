@@ -1,7 +1,7 @@
 # 🚌 Transitrack API
 
 ## 📖 Descripción
-API REST desarrollada con Django REST Framework para administrar rutas de transporte y conductores asignados. Permite crear, editar, eliminar y listar rutas y conductores, con búsqueda por origen o destino y relación entre ambas entidades.
+API REST desarrollada con Django REST Framework para administrar rutas de transporte y conductores asignados.
 
 ## 🛠️ Tecnologías
 - Python 3.12
@@ -11,84 +11,31 @@ API REST desarrollada con Django REST Framework para administrar rutas de transp
 
 ## ⚙️ Instalación y ejecución
 
-**1. Clonar el repositorio:**
-```bash
-git clone https://github.com/anali-salvador/transitrack_api.git
-cd transitrack_api
-```
-**2. Crear entorno virtual:**
-```bash
-python -m venv myvenv
-myvenv\Scripts\activate
-```
-**3. Instalar dependencias:**
-```bash
-pip install django
-pip install djangorestframework
-```
-**4. Aplicar migraciones:**
-```bash
-python manage.py migrate
-```
-**5. Correr el servidor:**
-```bash
-python manage.py runserver
-```
+1. Clonar el repositorio: `git clone https://github.com/anali-salvador/transitrack_api.git`
+2. Crear entorno virtual: `python -m venv myvenv`
+3. Activar entorno: `myvenv\Scripts\activate`
+4. Instalar dependencias: `pip install django djangorestframework`
+5. Aplicar migraciones: `python manage.py migrate`
+6. Correr servidor: `python manage.py runserver`
 
-## 🔗 Endpoints disponibles
+## 🔗 Endpoints
 
 ### Conductores
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
-| GET | `/api/conductores/` | Lista todos los conductores |
-| POST | `/api/conductores/` | Crea un conductor |
-| PUT | `/api/conductores/{id}/` | Edita un conductor |
-| DELETE | `/api/conductores/{id}/` | Elimina un conductor |
+| GET | `/api/conductores/` | Lista conductores |
+| POST | `/api/conductores/` | Crea conductor |
+| PUT | `/api/conductores/{id}/` | Edita conductor |
+| DELETE | `/api/conductores/{id}/` | Elimina conductor |
 
 ### Rutas
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
-| GET | `/api/rutas/` | Lista todas las rutas |
-| POST | `/api/rutas/` | Crea una ruta |
-| PUT | `/api/rutas/{id}/` | Edita una ruta |
-| DELETE | `/api/rutas/{id}/` | Elimina una ruta |
-| GET | `/api/rutas/?search=Lima` | Busca rutas por origen o destino |
-
-## 📋 Ejemplos de uso
-
-### Crear conductor:
-```json
-POST /api/conductores/
-{
-    "nombre": "Cristina Pérez",
-    "numero_licencia": "LIC-001"
-}
-```
-
-### Crear ruta:
-```json
-POST /api/rutas/
-{
-    "origen": "Lima",
-    "destino": "Cusco",
-    "horario": "08:00:00",
-    "conductor": 1
-}
-```
-
-### Buscar ruta:
-
-### Respuesta de ruta con conductor:
-```json
-{
-    "id": 1,
-    "conductor_nombre": "Carlos Pérez",
-    "origen": "Lima",
-    "destino": "Cusco",
-    "horario": "08:00:00",
-    "conductor": 1
-}
-```
+| GET | `/api/rutas/` | Lista rutas |
+| POST | `/api/rutas/` | Crea ruta |
+| PUT | `/api/rutas/{id}/` | Edita ruta |
+| DELETE | `/api/rutas/{id}/` | Elimina ruta |
+| GET | `/api/rutas/?search=Lima` | Busca rutas |
 
 ## 🖼️ Capturas de pantalla
 
