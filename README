@@ -1,0 +1,126 @@
+# 🚌 Transitrack API
+
+## 📖 Descripción
+API REST desarrollada con Django REST Framework para administrar rutas de transporte y conductores asignados. Permite crear, editar, eliminar y listar rutas y conductores, con búsqueda por origen o destino y relación entre ambas entidades.
+
+## 🛠️ Tecnologías
+- Python 3.12
+- Django 6.0.4
+- Django REST Framework
+- SQLite3
+
+## ⚙️ Instalación y ejecución
+
+**1. Clonar el repositorio:**
+```bash
+git clone https://github.com/anali-salvador/transitrack_api.git
+cd transitrack_api
+```
+**2. Crear entorno virtual:**
+```bash
+python -m venv myvenv
+myvenv\Scripts\activate
+```
+**3. Instalar dependencias:**
+```bash
+pip install django
+pip install djangorestframework
+```
+**4. Aplicar migraciones:**
+```bash
+python manage.py migrate
+```
+**5. Correr el servidor:**
+```bash
+python manage.py runserver
+```
+
+## 🔗 Endpoints disponibles
+
+### Conductores
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| GET | `/api/conductores/` | Lista todos los conductores |
+| POST | `/api/conductores/` | Crea un conductor |
+| PUT | `/api/conductores/{id}/` | Edita un conductor |
+| DELETE | `/api/conductores/{id}/` | Elimina un conductor |
+
+### Rutas
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| GET | `/api/rutas/` | Lista todas las rutas |
+| POST | `/api/rutas/` | Crea una ruta |
+| PUT | `/api/rutas/{id}/` | Edita una ruta |
+| DELETE | `/api/rutas/{id}/` | Elimina una ruta |
+| GET | `/api/rutas/?search=Lima` | Busca rutas por origen o destino |
+
+## 📋 Ejemplos de uso
+
+### Crear conductor:
+```json
+POST /api/conductores/
+{
+    "nombre": "Cristina Pérez",
+    "numero_licencia": "LIC-001"
+}
+```
+
+### Crear ruta:
+```json
+POST /api/rutas/
+{
+    "origen": "Lima",
+    "destino": "Cusco",
+    "horario": "08:00:00",
+    "conductor": 1
+}
+```
+
+### Buscar ruta:
+
+### Respuesta de ruta con conductor:
+```json
+{
+    "id": 1,
+    "conductor_nombre": "Carlos Pérez",
+    "origen": "Lima",
+    "destino": "Cusco",
+    "horario": "08:00:00",
+    "conductor": 1
+}
+```
+
+## 🖼️ Capturas de pantalla
+
+## GET Conductores
+![GET Conductores](./docs/01-get-conductores.png)
+
+## POST Conductor
+![POST Conductor](./docs/02-post-conductor.png)
+
+## PUT Conductor
+![PUT Conductor](./docs/03-put-conductor.png)
+
+## DELETE Conductor
+![DELETE Conductor](./docs/04-delete-conductor.png)
+
+## GET Rutas
+![GET Rutas](./docs/05-get-rutas.png)
+
+## POST Ruta
+![POST Ruta](./docs/06-post-ruta.png)
+
+## PUT Ruta
+![PUT Ruta](./docs/07-put-ruta.png)
+
+## DELETE Ruta
+![DELETE Ruta](./docs/08-delete-ruta.png)
+
+## Búsqueda de Rutas
+![Búsqueda](./docs/09-search-ruta.png)
+
+## Relación Ruta con Conductor
+![Relación](./docs/10-relacion.png)
+
+## 🙌 Autor
+**Anali Salvador Advincula** - Estudiante de Tecsup
